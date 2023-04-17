@@ -26,7 +26,7 @@ pipeline {
 
     stage('Docker push') {
       steps {
-        sh 'docker push WAlexanderGA/flask_app'
+        sh 'docker push walexanderga/flask_app'
       }
     }
 
