@@ -36,8 +36,8 @@ stage('Deploy Stage') {
       }
 stage('Kubernetes') {
   steps {
-    withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', CredentialsId:
-    'AWM_SECRECT_ACCESS_KEY')]) {
+    withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', CredentialsId:'AWS', secretKeyVariable:
+    'AWS_SECRECT_ACCESS_KEY')]) {
       sh "aws eks update-kubeconfig --region us-east-1 --name ${cluster_name}"
       script{
         try{
